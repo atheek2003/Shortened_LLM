@@ -46,3 +46,4 @@ python opt_main.py \
     --prunen 2 \
     --prunem 4 \
 ```
+## We tried to do the same for LLaMa but we were not able to go forward with it due to LLaMa being a gated repo for use with HuggingFace.
