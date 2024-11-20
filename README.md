@@ -1,15 +1,3 @@
-# *SparseLLM*: Towards Global Pruning of LLMs
-
-This repository contains the code for our **NeurIPS 2024** paper "[*SparseLLM*: Towards Global Pruning for Pre-trained Language Models](https://arxiv.org/abs/2402.17946)".
-
-*WORKING IN PROGRESS*: Our current released code is for preview purposes only and may be subject to numerical instability issues. We are actively working on a more stable version of our method, with an estimated release date around the time our camera-ready paper is out. 
-
-## Updates
-
-- <span style="color:green;">&#x2705;</span> *SparseLLM* code for both **OPT** and **LLaMA** models is now available.
-- <span style="color:green;">&#x2705;</span> More model types and functionalities will be added soon.
-
-
 ## Dependencies
 
 This project requires the following core dependencies:
@@ -24,8 +12,6 @@ This project requires the following core dependencies:
 - `wandb`: tested on v0.18.2 (for experiment tracking)
 
 ## Usage
-
-The scripts directory contains all the bash commands to replicate the main results in our NeurIPS 2024 paper. 
 
 ### Example for Pruning OPT:
 
@@ -83,24 +69,3 @@ python llama_main.py \
     --prunen 2 \
     --prunem 4 \
 ```
-
-## Reference
-
-If you find this code useful in your research, please consider citing:
-
-```bibtex
-@inproceedings{bai2024sparsellm,
-  title={SparseLLM: Towards Global Pruning of Pre-trained Language Models},
-  author={Bai, Guangji and Li, Yijiang and Ling, Chen and Kim, Kibaek and Zhao, Liang},
-  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
-  year={2024}
-}
-```
-We sincerely appreciate it 😊
-
-## Disclaimer
-
-1. This repository is built upon [SparseGPT](https://arxiv.org/abs/2301.00774) and [Wanda](https://arxiv.org/abs/2306.11695).
-2. *SparseLLM* aims to advance the research on improving fully local pruning methods for large language models (LLMs). Due to the iterative alternating optimization nature of *SparseLLM*, its running time will be (roughly number of iteration times) longer than that of one-shot pruning methods such as SparseGPT or Wanda. Additionally, the performance and numerical stability of the alternating optimization process can be sensitive to the initialization of hyperparameters.
-3. *SparseLLM* relies on auxiliary variables to achieve subproblem decomposition, which inevitably introduces additional memory overhead. For larger models like LLaMA-2-7B and beyond, we used a smaller calibration data size (e.g., 64 or 32) to ensure the code could run on an A100 40GB GPU. We are actively working on optimizing the GPU memory consumption and improving the efficiency of the code to support larger models and data sizes more effectively.
-
