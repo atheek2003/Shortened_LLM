@@ -1,4 +1,4 @@
-# AOML Project on LLM Pruning 
+# ADA Project on LLM Pruning 
 
 ## Dependencies
 
